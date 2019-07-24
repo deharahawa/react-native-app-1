@@ -1,6 +1,5 @@
-import React from "react";
-import Routes from "./routes";
-import "./config/StatusBarConfig";
+import React from 'react';
+import Routes from './routes';
 
 // Definindo o const app como função que retorna as routes
 const App = () => <Routes />;
