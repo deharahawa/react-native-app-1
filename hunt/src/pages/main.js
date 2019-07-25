@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import api from '../services/api';
+import api from "../services/api";
 
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
@@ -46,7 +46,12 @@ export default class Main extends Component {
       <Text style={styles.productTitle}>{item.title}</Text>
       <Text style={styles.productDescription}>{item.description}</Text>
 
-      <TouchableOpacity style={styles.productButton} onPress={() => { }}>
+      <TouchableOpacity
+        style={styles.productButton}
+        onPress={() => {
+          this.props.navigation.navigate("Product", { product: item });
+        }}
+      >
         <Text style={styles.productButtonTexts}>Acessar</Text>
       </TouchableOpacity>
     </View>
@@ -108,7 +113,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     justifyContent: "center",
     alignItems: "center",
-    margintop: 10
+    marginTop: 10
   },
 
   productButtonText: {
